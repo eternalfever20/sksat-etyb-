@@ -1,0 +1,7 @@
+[
+  {"id":"profile","question":"Describe the table and its columns.","tool":"describe_dataset"},
+  {"id":"filter","question":"How many orders were not returned?","tool":"filter_rows"},
+  {"id":"group","question":"Compare average revenue by region.","tool":"group_aggregate"},
+  {"id":"trend","question":"Show monthly revenue over time.","tool":"trend_over_time"},
+  {"id":"missingness","question":"Which columns have missing values?","tool":"analyze_missingness"}
+]

@@ -1,0 +1,36 @@
+order_id,order_date,region,product,channel,units,unit_price,discount_pct,revenue,profit,customer_type,returned
+O-1001,2025-01-04,North,Widget A,Online,3,24.0,0.00,72.00,21.60,New,false
+O-1002,2025-01-12,South,Widget B,Retail,2,38.0,0.05,72.20,18.05,Returning,false
+O-1003,2025-01-19,East,Widget A,Online,5,24.0,0.10,108.00,32.40,Returning,false
+O-1004,2025-02-02,West,Widget C,Partner,1,65.0,0.00,65.00,19.50,New,true
+O-1005,2025-02-11,North,Widget B,Online,4,38.0,0.05,144.40,36.10,Returning,false
+O-1006,2025-02-21,South,Widget A,Retail,2,24.0,0.00,48.00,14.40,New,false
+O-1007,2025-03-03,East,Widget C,Online,2,65.0,0.10,117.00,35.10,Returning,false
+O-1008,2025-03-14,West,Widget B,Partner,3,38.0,0.00,114.00,28.50,Returning,false
+O-1009,2025-03-26,North,Widget C,Retail,1,65.0,0.05,61.75,18.53,New,false
+O-1010,2025-04-05,South,Widget B,Online,6,38.0,0.15,193.80,48.45,Returning,false
+O-1011,2025-04-17,East,Widget A,Partner,4,24.0,0.05,91.20,27.36,New,false
+O-1012,2025-04-27,West,Widget C,Online,2,65.0,0.00,130.00,39.00,Returning,true
+O-1013,2025-05-06,North,Widget A,Retail,7,24.0,0.00,168.00,50.40,Returning,false
+O-1014,2025-05-18,South,Widget C,Partner,1,65.0,0.05,61.75,18.53,New,false
+O-1015,2025-05-29,East,Widget B,Online,3,38.0,0.10,102.60,25.65,Returning,false
+O-1016,2025-06-08,West,Widget A,Retail,2,24.0,0.00,48.00,14.40,New,false
+O-1017,2025-06-20,North,Widget B,Online,5,38.0,0.00,190.00,47.50,Returning,false
+O-1018,2025-07-01,South,Widget A,Partner,3,24.0,0.05,68.40,20.52,Returning,false
+O-1019,2025-07-13,East,Widget C,Retail,2,65.0,0.00,130.00,39.00,New,false
+O-1020,2025-07-25,West,Widget B,Online,4,38.0,0.10,136.80,34.20,Returning,false
+O-1021,2025-08-03,North,Widget C,Partner,2,65.0,0.05,123.50,37.05,New,false
+O-1022,2025-08-15,South,Widget B,Retail,3,38.0,0.00,114.00,28.50,Returning,false
+O-1023,2025-08-27,East,Widget A,Online,8,24.0,0.10,172.80,51.84,Returning,false
+O-1024,2025-09-06,West,Widget C,Partner,1,65.0,0.00,65.00,19.50,New,false
+O-1025,2025-09-18,North,Widget B,Retail,3,38.0,0.05,108.30,27.08,Returning,false
+O-1026,2025-10-01,South,Widget C,Online,4,65.0,0.10,234.00,70.20,Returning,false
+O-1027,2025-10-14,East,Widget B,Partner,2,38.0,0.00,76.00,19.00,New,false
+O-1028,2025-10-26,West,Widget A,Online,5,24.0,0.05,114.00,34.20,Returning,false
+O-1029,2025-11-04,North,Widget B,Partner,2,38.0,0.00,76.00,19.00,Returning,false
+O-1030,2025-11-16,South,Widget A,Online,1,24.0,0.00,24.00,7.20,New,false
+O-1031,2025-11-28,East,Widget C,Retail,3,65.0,0.05,185.25,55.58,Returning,false
+O-1032,2025-12-07,West,Widget B,Online,6,38.0,0.10,205.20,51.30,Returning,false
+O-1033,2025-12-19,North,Widget A,Partner,3,24.0,0.00,72.00,21.60,New,false
+O-1034,2025-12-29,South,Widget C,Retail,2,65.0,0.00,130.00,39.00,Returning,false
+O-1035,2025-12-30,East,Widget A,Online,,24.0,, , ,New,false
