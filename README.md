@@ -1,6 +1,4 @@
- HEAD
-# sksat-etyb-
-for some badly managed larp
+
 # TableLens
 
 TableLens answers questions about CSV and Excel tables. The language model chooses from registered analysis tools; Python runs each calculation against the loaded table and returns evidence with the answer. It does not generate or execute analysis code.
