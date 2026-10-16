@@ -55,5 +55,4 @@ The offline evaluation covers the synthetic sales table and real UCI Iris data: 
 
 Uploads are limited to 25 MB, 500,000 rows, and 500 columns. Tables and chat stay in the current Streamlit session; charts are temporary local files. Statistical tests assume suitable samples and do not establish causation. The UCI Iris example is real, small, and licensed CC BY 4.0; attribution and the synthetic sales example are documented in `data/README.md`. A generated IMDb-shaped fixture tests year and multi-value-category handling.
 
-Implementation choices represented here are schema-aware dataset loading, bounded local analysis tools, evidence-linked responses, and user-controlled scoped memory. AI assistance was used during implementation and review; before submission, describe which design and review decisions were personally yours. Confirm that the configured GitHub remote is public before submitting.
- origin/master
+
