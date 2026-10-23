@@ -111,29 +111,55 @@ logging.basicConfig(
     level=getattr(logging, os.getenv("LOG_LEVEL", "INFO").upper(), logging.INFO)
 )
 st.set_page_config(
-    page_title="Data Analyst",
+    page_title="TableLens · Data workspace",
     page_icon="▦",
     layout="wide",
     initial_sidebar_state="auto",
 )
 st.markdown(
     """<style>
-.block-container{max-width:1480px;padding:2rem 3rem 2.5rem}
-[data-testid="stSidebar"]>div:first-child{padding-top:1.25rem}
-.brand{font-size:1.05rem;font-weight:650;margin:0 0 2rem}
-.section-label{font-size:.83rem;font-weight:550;margin:1.25rem 0 .55rem}
-.dataset-card{border:1px solid rgba(90,80,60,.18);border-radius:8px;padding:14px 15px;margin:.25rem 0 .6rem}
-.dataset-name,.dataset-title{font-weight:650;overflow-wrap:anywhere}
-.dataset-meta,.dataset-stats{font-size:.88rem;margin-top:4px}
-.model-line{display:flex;align-items:center;gap:9px;font-family:monospace;font-size:.82rem;overflow-wrap:anywhere}
-.status-dot{width:9px;height:9px;background:#2e8b68;border-radius:50%;display:inline-block;flex:none}
-.status-dot.missing{background:#b7791f}
-.user-row{display:flex;justify-content:flex-end;margin:1.25rem 0 .9rem}
-.user-bubble{max-width:min(76%,720px);padding:12px 15px;border:1px solid rgba(90,80,60,.18);border-radius:10px;line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere}
-[data-testid="stButton"] button{white-space:normal;height:auto;min-height:44px}
-.empty-title{font-size:1.9rem;font-weight:650;margin-bottom:.4rem}
-.empty-copy{max-width:660px;font-size:1rem;line-height:1.6;margin-bottom:1.4rem}
-@media(max-width:900px){.block-container{padding:1.25rem 1rem}.user-bubble{max-width:92%}}
+:root{color-scheme:light;--canvas:#f6f5f1;--sidebar:#efede7;--surface:#fff;--surface-soft:#fbfaf7;--line:#e3e0d8;--line-strong:#cfcbc0;--ink:#1d1c19;--muted:#6e6a60;--green:#1f5f4a;--green-dark:#174a3a;--green-tint:#e6efea;--amber:#9a5b13;--red:#a33a2e;--ok:#2e8b68;--background-color:var(--canvas);--secondary-background-color:var(--sidebar);--text-color:var(--ink);--primary-color:var(--green)}
+html,body,[data-testid="stAppViewContainer"]{background:var(--canvas);color:var(--ink)}
+[data-testid="stHeader"]{background:rgba(246,245,241,.94)}
+[data-testid="stToolbar"]{right:1rem}
+.block-container{max-width:1500px;padding:2.1rem clamp(1.25rem,4vw,4rem) 3rem}
+section[data-testid="stSidebar"]{width:304px!important;min-width:304px!important;background:var(--sidebar);border-right:1px solid var(--line)}
+section[data-testid="stSidebar"]>div:first-child{background:var(--sidebar);padding:1.2rem 1.15rem 1.5rem}
+section[data-testid="stSidebar"] [data-testid="stVerticalBlock"]{gap:.7rem}
+.brand{font-size:1.12rem;font-weight:680;letter-spacing:-.035em;margin:0 0 1.5rem;color:var(--ink)}
+.brand:before{content:"";display:inline-block;width:9px;height:9px;margin:0 10px 1px 0;border-radius:2px;background:var(--green);transform:rotate(45deg)}
+.section-label{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:1.15rem 0 .35rem}
+.dataset-card{background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:14px 15px;margin:.25rem 0 .6rem}
+.dataset-name,.dataset-title{font-weight:680;letter-spacing:-.035em;overflow-wrap:anywhere;color:var(--ink)}
+.dataset-name{font-size:.95rem}.dataset-title{font-size:2rem;line-height:1.15}
+.dataset-meta,.dataset-stats{font-size:.88rem;margin-top:6px;color:var(--muted)}
+.dataset-stats{padding-bottom:1rem;border-bottom:1px solid var(--line)}
+.stat-warn{color:var(--amber);font-weight:650}
+.model-line{display:flex;align-items:center;gap:9px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.78rem;overflow-wrap:anywhere;color:var(--ink)}
+.status-dot{width:8px;height:8px;background:var(--ok);border-radius:50%;display:inline-block;flex:none}.status-dot.missing{background:var(--amber)}
+.user-row{display:flex;justify-content:flex-end;margin:1.2rem 0 .8rem}
+.user-bubble{max-width:min(76%,720px);padding:11px 15px;background:var(--surface);border:1px solid var(--line);border-radius:11px;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--ink)}
+.empty-title{font-size:clamp(1.8rem,3vw,2.45rem);font-weight:680;letter-spacing:-.045em;margin-bottom:.45rem;color:var(--ink)}
+.empty-copy{max-width:660px;font-size:1rem;line-height:1.7;margin-bottom:1.4rem;color:var(--muted)}
+[data-testid="stTabs"] [data-baseweb="tab-list"]{gap:1.5rem;border-bottom:1px solid var(--line)}
+[data-testid="stTabs"] button[role="tab"]{color:var(--muted);font-weight:600;padding:0 0 .8rem;background:transparent}
+[data-testid="stTabs"] button[role="tab"][aria-selected="true"]{color:var(--green);border-bottom:2px solid var(--green)}
+[data-testid="stButton"] button,[data-testid="stFormSubmitButton"] button{white-space:normal;height:auto;min-height:44px;border-radius:8px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);font-weight:550;transition:background .15s ease,border-color .15s ease,color .15s ease}
+[data-testid="stButton"] button:hover,[data-testid="stFormSubmitButton"] button:hover{border-color:var(--green);color:var(--green);background:var(--green-tint)}
+[data-testid="stButton"] button[kind="primary"],[data-testid="stFormSubmitButton"] button[kind="primary"]{background:var(--green);border-color:var(--green);color:#fff}
+[data-testid="stButton"] button[kind="primary"]:hover,[data-testid="stFormSubmitButton"] button[kind="primary"]:hover{background:var(--green-dark);border-color:var(--green-dark);color:#fff}
+[data-testid="stFileUploader"] section{background:var(--surface-soft);border:1px dashed var(--line-strong);border-radius:10px}
+[data-testid="stFileUploader"] section:hover{border-color:var(--green);background:var(--green-tint)}
+[data-testid="stTextInput"] input,[data-testid="stTextArea"] textarea,[data-testid="stSelectbox"] [data-baseweb="select"]>div{background:var(--surface);border-color:var(--line-strong);border-radius:8px;color:var(--ink)}
+[data-testid="stTextInput"] input:focus,[data-testid="stTextArea"] textarea:focus{border-color:var(--green);box-shadow:0 0 0 1px var(--green)}
+[data-testid="stDataFrame"], [data-testid="stTable"]{border:1px solid var(--line);border-radius:9px;overflow:hidden;background:var(--surface)}
+[data-testid="stExpander"]{border:1px solid var(--line);border-radius:9px;background:var(--surface)}
+[data-testid="stAlert"]{border-radius:8px}
+[data-testid="stCaptionContainer"]{color:var(--muted)}
+code{color:var(--green)}
+*:focus-visible{outline-color:var(--green)!important}
+@media(max-width:900px){.block-container{padding:1.35rem 1rem 2rem}.user-bubble{max-width:92%}section[data-testid="stSidebar"]{width:280px!important;min-width:280px!important}}
+@media(max-width:600px){.dataset-title{font-size:1.6rem}[data-testid="stTabs"] [data-baseweb="tab-list"]{gap:1rem}}
 </style>""",
     unsafe_allow_html=True,
 )
@@ -567,7 +593,7 @@ def render_quick_tools(df: pd.DataFrame, info: dict) -> None:
 
 
 with st.sidebar:
-    st.markdown('<div class="brand">Data Analyst</div>', unsafe_allow_html=True)
+    st.markdown('<div class="brand">TableLens</div>', unsafe_allow_html=True)
     st.markdown('<div class="section-label">Dataset</div>', unsafe_allow_html=True)
     loaded = "frame" in st.session_state
 

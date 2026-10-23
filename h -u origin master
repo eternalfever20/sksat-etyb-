@@ -1,0 +1,5 @@
+[33m26c93a6[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m docs: explain setup, architecture, and evaluation
+[33m6fdd6cd[m feat(ui): add direct analysis controls and evidence views
+[33m95ae5bf[m feat(memory): persist scoped user definitions and preferences
+[33mde169c3[m feat(agent): add validated analysis tools and OpenRouter tool calling
+[33m74bc454[m feat(data): support CSV and Excel tables with attributed examples
